@@ -13,13 +13,13 @@ jobs:
         id: meta_web
         uses: docker/metadata-action@v5
         with:
-          images: kagurazakanyaa/mcsm-web
+          images: 56025192/mcsm-web
 
       - name: Docker meta daemon
         id: meta_daemon
         uses: docker/metadata-action@v5
         with:
-          images: kagurazakanyaa/mcsm-daemon
+          images: 56025192/mcsm-daemon
 
       - name: Checkout
         uses: actions/checkout@v4
