@@ -8,7 +8,7 @@ if [[ "$currentversion" == "$version" ]]; then
 fi
 
 git config user.name "github-actions[bot]"
-git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+git config user.email "56025192+github-actions[bot]@users.noreply.github.com"
 git add currentversion
 git commit -a -m "Auto Update to MCSManager $version"
 git tag -f "$version"
