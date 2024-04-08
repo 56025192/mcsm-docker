@@ -6,14 +6,14 @@ RUN curl -L https://github.com/MCSManager/MCSManager/releases/download/${VERSION
 
 FROM node:lts
 
-WORKDIR /opt/mcsmanager/daemon
+WORKDIR /mnt/user/appdata/mcsm/daemon
 
-COPY --from=download /build/daemon/ /opt/mcsmanager/daemon/
+COPY --from=download /build/daemon/ /mnt/user/appdata/mcsm/daemon/
 
 RUN npm install --production
 
 EXPOSE 24444
 
-VOLUME ["/opt/mcsmanager/daemon/data", "/opt/mcsmanager/daemon/logs"]
+VOLUME ["/mnt/user/appdata/mcsm/daemon/data", "/mnt/user/appdata/mcsm/daemon/logs"]
 
 CMD [ "app.js", "--max-old-space-size=8192" ]
