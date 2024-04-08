@@ -6,14 +6,14 @@ RUN curl -L https://github.com/MCSManager/MCSManager/releases/download/${VERSION
 
 FROM node:lts
 
-WORKDIR /opt/mcsmanager/web
+WORKDIR /mnt/user/appdata/mcsm/web
 
-COPY --from=download /build/web/ /opt/mcsmanager/web/
+COPY --from=download /build/web/ /mnt/user/appdata/mcsm/web/
 
 RUN npm install --production
 
 EXPOSE 23333
 
-VOLUME ["/opt/mcsmanager/web/data", "/opt/mcsmanager/web/logs"]
+VOLUME ["/mnt/user/appdata/mcsm/web/data", "/mnt/user/appdata/mcsm/web/logs"]
 
 CMD [ "app.js", "--max-old-space-size=8192" ]
